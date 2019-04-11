@@ -59,6 +59,7 @@ class Scratch3MlBlocks {
             console.log('iframe received message!:  ', e);
             console.log('e.origin ==>' + e.origin);
             console.log('e.data ==>' + e.data);
+            /*
             if (~event.origin.indexOf('http://localhost:5060')) { 
                 console.log('origin true'); 
                 var jsonData = JSON.parse(e.data);
@@ -69,7 +70,11 @@ class Scratch3MlBlocks {
             } else { 
                 console.log('origin false'); 
                 //return '';
-            } 
+            } */
+            var jsonData = JSON.parse(e.data);
+            console.log(jsonData);
+            console.log(jsonData.prediction);
+            prediction = jsonData.prediction;
         }, false);
 
         var delay = function(time) {
